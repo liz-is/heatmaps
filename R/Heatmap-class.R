@@ -352,7 +352,7 @@ Heatmap = function(image, coords=NULL, label="", nseq=NULL, scale=NULL, metadata
         nseq = as.integer(nseq)
     }
     if (is.null(scale)) {
-        scale = getScale(min(image), max(image))
+        scale = getScale(min(image, na.rm = TRUE), max(image, na.rm = TRUE))
     }
     hm = new(
         "Heatmap",

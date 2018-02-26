@@ -80,7 +80,7 @@ signature(windows = "GenomicRanges", track="RleList"),
 
         hm = Heatmap(
             image=mat,
-            scale=getScale(min(mat), max(mat)),
+            scale=getScale(min(mat, na.rm = TRUE), max(mat, na.rm = TRUE)),
             coords=as.integer(coords),
             nseq=length(windows),
             label=label)
